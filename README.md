@@ -9,6 +9,7 @@ How to run:
     `npm install`
   
 2) Install MongoDB: https://www.mongodb.com/docs/v4.4/tutorial/install-mongodb-on-windows/
+
     *You can also use mongoDB Atlas*
 
     For Windows:
