@@ -1,0 +1,32 @@
+<%- include('../partials/header.ejs') %>
+<div class="container-fluid">
+  <div class="row d-flex justify-content-center align-items-center" style="height: 60vh;">
+    <div class="col-md-4 align-self-center">
+      <div class="card shadow text-white bg-dark">
+        <div class="card-body">
+          <h5 class="card-title mb-4">Sign up</h5>
+          <form action="/users" method="POST">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group mb-4">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Sign up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('../partials/footer.ejs') %>

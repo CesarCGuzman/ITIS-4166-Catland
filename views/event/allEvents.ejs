@@ -1,0 +1,35 @@
+<%- include('../partials/header.ejs') %>    
+<!--Body-->
+
+<!--Events-->
+<div class="container">
+    <div class="container-fluid mt-5">
+        <!-- For All Categories-->
+    <% if (events.length) { %>
+        <% for( let i = 0; i < CATegories.length; i++ ) { %>
+            <!-- Filters to one category -->
+            <% const currCat = events.filter(event => event.category === CATegories[i]) %>
+            <% if (currCat.length > 0) { %>
+                <!-- Displays Category Name-->
+                <h2><%= CATegories[i] %></h2>
+
+                <!-- Container For Events-->
+                <div class="conatiner ps-5">
+                    <ul class="list-unstyled">
+
+                <!-- Displays List Of All Events In our Category-->
+                <% for( let j = 0; j < currCat.length; j++ ) { %>
+                        <li class="mb-4">
+                            <a href="/events/<%= currCat[j].id %>" class="text-decoration-none text-black"><%= currCat[j].title %></a>
+                        </li>
+                <% } %>               
+                    </ul>       
+                </div>
+            <% } %>
+        <% } %>
+    <% } else { %>
+        <h2>No events happening right meow</h2>
+    <% } %>
+    </div>
+</div>    
+<%- include('../partials/footer.ejs') %>    

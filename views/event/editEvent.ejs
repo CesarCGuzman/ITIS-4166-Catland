@@ -1,0 +1,74 @@
+<%- include('../partials/header.ejs') %>
+<div class="container-fluid mt-5">
+    <div class="container w-75">
+        <form method="POST" action="/events/<%= event.id %>?_method=PUT" enctype="multipart/form-data">
+            <div class="row mb-4">
+              <label for="category" class="col-sm-1 col-form-label">Category</label>
+              <div class="col-sm-10">
+                <select class="form-select" id="category" name="category" required>
+                    <option selected value="<%= event.category %>"><%= event.category %></option>
+
+                    <!-- Pass Along Categories Array and Create Options -->
+                    <% for( let i = 0; i < CATegories.length; i++ ) { %>
+                        <!-- Make Sure CAT isnt the one already selected -->
+                        <% if (CATegories[i] != event.category) { %>
+                            <option value="<%= CATegories[i] %>"><%= CATegories[i] %></option>
+                        <% } %>
+                    <% } %>
+                </select>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <label for="title" class="col-sm-1 col-form-label">Title</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Event title" value="<%= event.title %>" required>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+                <label for="details" class="col-sm-1 col-form-label">Details</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" id="details" name="details" cols="30" rows="4" placeholder="Description" minlength="10" required><%= event.details %></textarea>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <label for="location" class="col-sm-1 col-form-label">Where</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="location" placeholder="Location" name="location" value="<%= event.location %>" required>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <label for="startDateTime" class="col-sm-1 col-form-label">Start</label>
+                <div class="col-sm-10">
+                  <input type="datetime-local" timezone="UTC" class="form-control" id="startDateTime" name="startDateTime" value="<%= formattedStart %>" required>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <label for="endDateTime" class="col-sm-1 col-form-label">End</label>
+                <div class="col-sm-10">
+                  <input type="datetime-local" timezone="UTC" class="form-control" id="endDateTime" name="endDateTime" value="<%= formattedEnd %>" required>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <label for="image" class="col-sm-1 col-form-label">Image</label>
+                <div class="col-sm-10">
+                  <input type="file" value="<%= event.image %>" accept="image/*" name="image" class="form-control" id="image">
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="input-image" class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-10 justify-content-end">
+                    <input type="submit" value="Submit" class="btn btn-lg btn-dark w-100 pt-3 pb-3" required>
+                </div> 
+            </div>
+            
+        </form>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>

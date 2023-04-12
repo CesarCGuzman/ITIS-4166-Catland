@@ -1,0 +1,59 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+footer {
+  width: 100%;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: rgba(173, 181, 189, 0.75);
+}
+
+.footer-icon {
+  fill: rgba(173, 181, 189, 0.75);
+}
+
+.footer-link:hover, .footer-icon:hover {
+  color: white;
+  fill: white;
+}
+
+.nav-img-fluid {
+  max-width: 125px;
+  height: inherit;
+}
+
+
+.event-img-2 {
+  max-width: inherit;
+  max-height: 75%;
+}
+
+.success {
+  background: green;
+  color: #fff;
+  width: 70%;
+  margin: 0 auto 1rem auto;
+  text-align: center;
+  padding: 0.5rem 0;
+
+}
+
+.error {
+  background: red;
+  color: #fff;
+  width: 70%;
+  margin: 0 auto 1rem auto;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+

@@ -1,0 +1,20 @@
+<%- include('../partials/header.ejs') %>
+<div class="container-fluid mt-4">
+  <div class="container w-75">
+    <h3>Contact</h3>
+    <form action="/contact" method="POST">
+      <div class="mb-3">
+        <label for="contactemail" class="form-label">Email address:</label>
+        <input type="email" class="form-control" id="contactemail" name="contactemail" placeholder="Email">
+      </div>
+      <div class="mb-3">
+        <label for="contactreason" class="form-label">Reason for contacting:</label>
+        <textarea class="form-control" name="contactreason" id="contactreason" cols="30" rows="10"></textarea>
+      </div>
+      <div class="justify-content-end">
+        <input type="submit" value="Contact" class="btn btn-lg btn-dark w-100 pt-3 pb-3">
+    </div>
+    </form>
+  </div>
+</div> 
+<%- include('../partials/footer.ejs') %>
